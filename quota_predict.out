@@ -1,0 +1,67 @@
+nohup: 忽略输入
+Using TensorFlow backend.
+2021-07-08 17:08:23.022286: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-07-08 17:08:23.057871: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-07-08 17:08:23.169799: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 17:08:23.170196: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55e5dbe326e0 executing computations on platform CUDA. Devices:
+2021-07-08 17:08:23.170237: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce GTX 1070, Compute Capability 6.1
+2021-07-08 17:08:23.172043: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3000000000 Hz
+2021-07-08 17:08:23.172317: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55e5dbbf6b90 executing computations on platform Host. Devices:
+2021-07-08 17:08:23.172333: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-07-08 17:08:23.177721: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 17:08:23.178002: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 17:08:23.178312: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 17:08:23.188978: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 17:08:23.189915: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 17:08:23.190114: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 17:08:23.191373: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 17:08:23.192313: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 17:08:23.195284: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 17:08:23.195414: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 17:08:23.195834: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 17:08:23.196080: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 17:08:23.196118: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 17:08:23.196766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 17:08:23.196802: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 17:08:23.196838: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 17:08:23.197215: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 17:08:23.197515: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 17:08:23.197852: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7142 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1_ext.weights
+WARNING:tensorflow:From /home/ailab/miniconda3/envs/bert4keras/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-07-08 17:08:29.304021: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/5.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/5_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/2_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/2.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/4.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/4_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/5.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/5_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/2_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/2.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/4.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/4_ext.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/5.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/3.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/1.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/2.weights
+predicting on /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/4.weights
+WARNING:tensorflow:From /home/ailab/miniconda3/envs/bert4keras/lib/python3.6/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+Epoch 1/5
+ - 122s - loss: 0.4258 - accuracy: 0.8214 - val_loss: 0.0600 - val_accuracy: 0.9091
+Epoch 2/5
+ - 114s - loss: 0.2181 - accuracy: 0.9251 - val_loss: 0.2044 - val_accuracy: 0.9281
+Epoch 00002: early stopping

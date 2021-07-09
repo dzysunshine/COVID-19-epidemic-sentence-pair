@@ -1,0 +1,919 @@
+nohup: 忽略输入
+Using TensorFlow backend.
+训练集数据共有：8747条
+验证集数据共有：2002条
+删除后的训练集数据共有：8747条
+额外的训练集数据共有：20000条
+原训练集数据与额外训练集数据拼接后共有：28747条
+------------------------------数据已加载完成------------------------------
+2021-07-07 18:47:06.849628: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-07-07 18:47:06.855034: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-07-07 18:47:06.950165: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:47:06.950496: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55af1f5b6cd0 executing computations on platform CUDA. Devices:
+2021-07-07 18:47:06.950515: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce GTX 1070, Compute Capability 6.1
+2021-07-07 18:47:06.952520: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3000000000 Hz
+2021-07-07 18:47:06.952716: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55af1f3bccf0 executing computations on platform Host. Devices:
+2021-07-07 18:47:06.952736: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-07-07 18:47:06.952908: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:47:06.953086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 18:47:06.977649: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 18:47:07.002675: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 18:47:07.050007: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 18:47:07.061671: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 18:47:07.111712: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 18:47:07.120906: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 18:47:07.223759: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 18:47:07.224060: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:47:07.224324: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:47:07.224466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 18:47:07.224513: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 18:47:07.224791: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 18:47:07.224811: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 18:47:07.224819: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 18:47:07.225166: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:47:07.225364: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:47:07.225523: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 84 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2021-07-07 18:47:07.744235: E tensorflow/stream_executor/cuda/cuda_driver.cc:828] failed to allocate 84.69M (88801280 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2021-07-07 18:47:07.745549: E tensorflow/stream_executor/cuda/cuda_driver.cc:828] failed to allocate 76.22M (79921152 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2021-07-07 18:47:07.746081: E tensorflow/stream_executor/cuda/cuda_driver.cc:828] failed to allocate 68.60M (71929088 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2021-07-07 18:47:07.746520: E tensorflow/stream_executor/cuda/cuda_driver.cc:828] failed to allocate 61.74M (64736256 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2021-07-07 18:47:08.162553: F tensorflow/stream_executor/cuda/cuda_driver.cc:175] Check failed: err == cudaSuccess || err == cudaErrorInvalidValue Unexpected CUDA error: out of memory
+nohup: 忽略输入
+Using TensorFlow backend.
+训练集数据共有：8747条
+验证集数据共有：2002条
+删除后的训练集数据共有：8747条
+额外的训练集数据共有：20000条
+原训练集数据与额外训练集数据拼接后共有：28747条
+------------------------------数据已加载完成------------------------------
+2021-07-07 18:50:07.712269: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-07-07 18:50:07.716522: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-07-07 18:50:07.807969: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:50:07.808337: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5608fabb3720 executing computations on platform CUDA. Devices:
+2021-07-07 18:50:07.808355: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce GTX 1070, Compute Capability 6.1
+2021-07-07 18:50:07.809996: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3000000000 Hz
+2021-07-07 18:50:07.810260: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5608fc6d4d70 executing computations on platform Host. Devices:
+2021-07-07 18:50:07.810287: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-07-07 18:50:07.810450: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:50:07.810706: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 18:50:07.810861: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 18:50:07.811765: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 18:50:07.812536: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 18:50:07.812711: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 18:50:07.813781: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 18:50:07.814530: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 18:50:07.817124: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 18:50:07.817225: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:50:07.817547: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:50:07.817790: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 18:50:07.817820: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 18:50:07.818176: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 18:50:07.818188: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 18:50:07.818193: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 18:50:07.818264: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:50:07.818544: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 18:50:07.818805: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+WARNING:tensorflow:From /home/ailab/miniconda3/envs/bert4keras/lib/python3.6/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/ailab/miniconda3/envs/bert4keras/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+Epoch 1/5
+2021-07-07 18:50:37.161341: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+ - 286s - loss: 0.3788 - accuracy: 0.8272 - val_loss: 0.2426 - val_accuracy: 0.9377
+
+Epoch 00001: val_loss improved from inf to 0.24257, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1.weights
+Epoch 2/5
+ - 274s - loss: 0.2322 - accuracy: 0.9093 - val_loss: 0.0703 - val_accuracy: 0.9437
+
+Epoch 00002: val_loss improved from 0.24257 to 0.07032, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1.weights
+Epoch 3/5
+ - 274s - loss: 0.1695 - accuracy: 0.9355 - val_loss: 0.0241 - val_accuracy: 0.9479
+
+Epoch 00003: val_loss improved from 0.07032 to 0.02409, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1.weights
+Epoch 4/5
+ - 274s - loss: 0.1269 - accuracy: 0.9534 - val_loss: 0.0110 - val_accuracy: 0.9488
+
+Epoch 00004: val_loss improved from 0.02409 to 0.01098, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1.weights
+Epoch 5/5
+ - 275s - loss: 0.1029 - accuracy: 0.9636 - val_loss: 0.0031 - val_accuracy: 0.9516
+
+Epoch 00005: val_loss improved from 0.01098 to 0.00309, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1.weights
+2021-07-07 19:14:06.999775: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:14:06.999969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 19:14:07.000010: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 19:14:07.000024: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 19:14:07.000036: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 19:14:07.000047: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 19:14:07.000059: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 19:14:07.000070: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 19:14:07.000083: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 19:14:07.000130: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:14:07.000336: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:14:07.000509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 19:14:07.000544: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 19:14:07.000549: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 19:14:07.000554: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 19:14:07.000621: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:14:07.000850: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:14:07.001009: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 308s - loss: 0.3623 - accuracy: 0.8401 - val_loss: 0.1121 - val_accuracy: 0.9307
+
+Epoch 00001: val_loss improved from inf to 0.11209, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/2.weights
+Epoch 2/5
+ - 295s - loss: 0.2281 - accuracy: 0.9143 - val_loss: 0.1072 - val_accuracy: 0.9447
+
+Epoch 00002: val_loss improved from 0.11209 to 0.10723, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/2.weights
+Epoch 3/5
+ - 295s - loss: 0.1693 - accuracy: 0.9369 - val_loss: 0.1210 - val_accuracy: 0.9488
+
+Epoch 00003: val_loss did not improve from 0.10723
+Epoch 00003: early stopping
+2021-07-07 19:29:40.581662: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:29:40.581869: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 19:29:40.581913: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 19:29:40.581927: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 19:29:40.581939: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 19:29:40.581951: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 19:29:40.581963: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 19:29:40.581975: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 19:29:40.581987: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 19:29:40.582036: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:29:40.582202: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:29:40.582334: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 19:29:40.582354: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 19:29:40.582360: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 19:29:40.582365: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 19:29:40.582420: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:29:40.582585: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:29:40.582725: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 323s - loss: 0.3774 - accuracy: 0.8265 - val_loss: 0.2625 - val_accuracy: 0.9386
+
+Epoch 00001: val_loss improved from inf to 0.26251, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3.weights
+Epoch 2/5
+ - 306s - loss: 0.2331 - accuracy: 0.9098 - val_loss: 0.1269 - val_accuracy: 0.9479
+
+Epoch 00002: val_loss improved from 0.26251 to 0.12693, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3.weights
+Epoch 3/5
+ - 306s - loss: 0.1767 - accuracy: 0.9339 - val_loss: 0.0429 - val_accuracy: 0.9447
+
+Epoch 00003: val_loss improved from 0.12693 to 0.04288, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3.weights
+Epoch 4/5
+ - 307s - loss: 0.1318 - accuracy: 0.9524 - val_loss: 0.0134 - val_accuracy: 0.9535
+
+Epoch 00004: val_loss improved from 0.04288 to 0.01336, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3.weights
+Epoch 5/5
+ - 305s - loss: 0.1010 - accuracy: 0.9651 - val_loss: 0.0292 - val_accuracy: 0.9470
+
+Epoch 00005: val_loss did not improve from 0.01336
+Epoch 00005: early stopping
+2021-07-07 19:56:11.411466: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:56:11.411670: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 19:56:11.411714: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 19:56:11.411728: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 19:56:11.411740: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 19:56:11.411752: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 19:56:11.411764: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 19:56:11.411776: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 19:56:11.411789: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 19:56:11.411836: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:56:11.411999: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:56:11.412128: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 19:56:11.412150: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 19:56:11.412156: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 19:56:11.412160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 19:56:11.412217: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:56:11.412382: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 19:56:11.412520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 319s - loss: 0.4311 - accuracy: 0.8039 - val_loss: 0.0942 - val_accuracy: 0.9014
+
+Epoch 00001: val_loss improved from inf to 0.09421, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/4.weights
+Epoch 2/5
+ - 308s - loss: 0.2849 - accuracy: 0.8813 - val_loss: 0.2745 - val_accuracy: 0.9167
+
+Epoch 00002: val_loss did not improve from 0.09421
+Epoch 00002: early stopping
+2021-07-07 20:07:12.170311: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:07:12.170518: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 20:07:12.170564: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 20:07:12.170577: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 20:07:12.170588: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 20:07:12.170600: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 20:07:12.170611: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 20:07:12.170623: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 20:07:12.170635: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 20:07:12.170681: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:07:12.170844: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:07:12.170975: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 20:07:12.170996: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 20:07:12.171001: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 20:07:12.171005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 20:07:12.171060: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:07:12.171224: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:07:12.171361: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 321s - loss: 0.4053 - accuracy: 0.8121 - val_loss: 0.0587 - val_accuracy: 0.9265
+
+Epoch 00001: val_loss improved from inf to 0.05871, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/5.weights
+Epoch 2/5
+ - 309s - loss: 0.2473 - accuracy: 0.9066 - val_loss: 0.0332 - val_accuracy: 0.9381
+
+Epoch 00002: val_loss improved from 0.05871 to 0.03320, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/5.weights
+Epoch 3/5
+ - 306s - loss: 0.2406 - accuracy: 0.8972 - val_loss: 0.6102 - val_accuracy: 0.9418
+
+Epoch 00003: val_loss did not improve from 0.03320
+Epoch 00003: early stopping
+2021-07-07 20:23:26.021928: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:23:26.022275: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 20:23:26.022318: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 20:23:26.022332: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 20:23:26.022345: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 20:23:26.022357: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 20:23:26.022369: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 20:23:26.022381: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 20:23:26.022394: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 20:23:26.022443: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:23:26.022610: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:23:26.022744: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 20:23:26.022766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 20:23:26.022772: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 20:23:26.022777: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 20:23:26.022834: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:23:26.023003: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 20:23:26.023145: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 928s - loss: 0.4487 - accuracy: 0.7845 - val_loss: 0.8531 - val_accuracy: 0.8797
+
+Epoch 00001: val_loss improved from inf to 0.85306, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1_ext.weights
+Epoch 2/5
+ - 909s - loss: 0.3189 - accuracy: 0.8613 - val_loss: 0.3095 - val_accuracy: 0.8868
+
+Epoch 00002: val_loss improved from 0.85306 to 0.30954, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/1_ext.weights
+Epoch 3/5
+ - 909s - loss: 0.2564 - accuracy: 0.8904 - val_loss: 0.4868 - val_accuracy: 0.8979
+
+Epoch 00003: val_loss did not improve from 0.30954
+Epoch 00003: early stopping
+2021-07-07 21:09:47.337943: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:09:47.338141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 21:09:47.338183: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 21:09:47.338207: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 21:09:47.338219: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 21:09:47.338231: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 21:09:47.338242: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 21:09:47.338253: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 21:09:47.338265: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 21:09:47.338314: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:09:47.338478: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:09:47.338608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 21:09:47.338629: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 21:09:47.338634: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 21:09:47.338638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 21:09:47.338694: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:09:47.338857: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:09:47.338995: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 929s - loss: 0.4607 - accuracy: 0.7731 - val_loss: 0.4694 - val_accuracy: 0.8841
+
+Epoch 00001: val_loss improved from inf to 0.46939, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/2_ext.weights
+Epoch 2/5
+ - 908s - loss: 0.3250 - accuracy: 0.8553 - val_loss: 0.4749 - val_accuracy: 0.9003
+
+Epoch 00002: val_loss did not improve from 0.46939
+Epoch 00002: early stopping
+2021-07-07 21:40:58.326240: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:40:58.326440: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 21:40:58.326480: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 21:40:58.326492: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 21:40:58.326503: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 21:40:58.326514: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 21:40:58.326533: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 21:40:58.326544: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 21:40:58.326555: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 21:40:58.326602: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:40:58.326770: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:40:58.326904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 21:40:58.326925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 21:40:58.326930: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 21:40:58.326935: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 21:40:58.326992: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:40:58.327160: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 21:40:58.327303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 920s - loss: 0.4668 - accuracy: 0.7675 - val_loss: 0.3130 - val_accuracy: 0.8831
+
+Epoch 00001: val_loss improved from inf to 0.31303, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3_ext.weights
+Epoch 2/5
+ - 915s - loss: 0.3267 - accuracy: 0.8548 - val_loss: 0.1835 - val_accuracy: 0.8933
+
+Epoch 00002: val_loss improved from 0.31303 to 0.18348, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3_ext.weights
+Epoch 3/5
+ - 911s - loss: 0.2635 - accuracy: 0.8847 - val_loss: 0.1552 - val_accuracy: 0.8919
+
+Epoch 00003: val_loss improved from 0.18348 to 0.15518, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3_ext.weights
+Epoch 4/5
+ - 924s - loss: 0.2133 - accuracy: 0.9101 - val_loss: 0.1050 - val_accuracy: 0.9073
+
+Epoch 00004: val_loss improved from 0.15518 to 0.10499, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/3_ext.weights
+Epoch 5/5
+ - 956s - loss: 0.1722 - accuracy: 0.9279 - val_loss: 0.2136 - val_accuracy: 0.9042
+
+Epoch 00005: val_loss did not improve from 0.10499
+Epoch 00005: early stopping
+2021-07-07 22:58:48.316160: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 22:58:48.316384: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 22:58:48.487388: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 22:58:48.487524: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 22:58:48.487619: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 22:58:48.487686: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 22:58:48.487751: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 22:58:48.487813: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 22:58:48.487879: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 22:58:48.488312: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 22:58:48.489181: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 22:58:48.489779: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 22:58:48.489882: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 22:58:48.489913: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 22:58:48.489936: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 22:58:48.490227: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 22:58:48.490979: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 22:58:48.491594: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 898s - loss: 0.4683 - accuracy: 0.7658 - val_loss: 0.1058 - val_accuracy: 0.8764
+
+Epoch 00001: val_loss improved from inf to 0.10581, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/4_ext.weights
+Epoch 2/5
+ - 881s - loss: 0.3258 - accuracy: 0.8554 - val_loss: 0.0829 - val_accuracy: 0.8831
+
+Epoch 00002: val_loss improved from 0.10581 to 0.08294, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/4_ext.weights
+Epoch 3/5
+ - 871s - loss: 0.2598 - accuracy: 0.8869 - val_loss: 0.2001 - val_accuracy: 0.8971
+
+Epoch 00003: val_loss did not improve from 0.08294
+Epoch 00003: early stopping
+2021-07-07 23:43:37.419037: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 23:43:37.419239: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-07 23:43:37.419279: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-07 23:43:37.419291: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-07 23:43:37.419302: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-07 23:43:37.419321: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-07 23:43:37.419333: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-07 23:43:37.419343: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-07 23:43:37.419354: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-07 23:43:37.419402: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 23:43:37.419570: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 23:43:37.419704: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-07 23:43:37.419725: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-07 23:43:37.419731: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-07 23:43:37.419735: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-07 23:43:37.419794: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 23:43:37.419962: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-07 23:43:37.420103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 910s - loss: 0.4584 - accuracy: 0.7756 - val_loss: 0.2168 - val_accuracy: 0.8640
+
+Epoch 00001: val_loss improved from inf to 0.21678, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/bert_weights/5_ext.weights
+Epoch 2/5
+ - 888s - loss: 0.3374 - accuracy: 0.8473 - val_loss: 0.2662 - val_accuracy: 0.8935
+
+Epoch 00002: val_loss did not improve from 0.21678
+Epoch 00002: early stopping
+2021-07-08 00:14:14.536602: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:14:14.536847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 00:14:14.536892: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 00:14:14.536905: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 00:14:14.536918: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 00:14:14.536929: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 00:14:14.536941: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 00:14:14.536953: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 00:14:14.536965: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 00:14:14.537024: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:14:14.537188: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:14:14.537318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 00:14:14.537338: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 00:14:14.537344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 00:14:14.537348: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 00:14:14.537404: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:14:14.537567: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:14:14.537705: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 260s - loss: 0.3120 - accuracy: 0.8644 - val_loss: 0.0583 - val_accuracy: 0.9381
+
+Epoch 00001: val_loss improved from inf to 0.05827, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1.weights
+Epoch 2/5
+ - 228s - loss: 0.1668 - accuracy: 0.9388 - val_loss: 0.0579 - val_accuracy: 0.9540
+
+Epoch 00002: val_loss improved from 0.05827 to 0.05793, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1.weights
+Epoch 3/5
+ - 228s - loss: 0.1103 - accuracy: 0.9602 - val_loss: 0.0069 - val_accuracy: 0.9530
+
+Epoch 00003: val_loss improved from 0.05793 to 0.00689, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1.weights
+Epoch 4/5
+ - 227s - loss: 0.0755 - accuracy: 0.9744 - val_loss: 0.0088 - val_accuracy: 0.9553
+
+Epoch 00004: val_loss did not improve from 0.00689
+Epoch 00004: early stopping
+2021-07-08 00:30:46.212328: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:30:46.212520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 00:30:46.212562: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 00:30:46.212576: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 00:30:46.212588: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 00:30:46.212600: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 00:30:46.212612: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 00:30:46.212624: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 00:30:46.212636: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 00:30:46.212695: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:30:46.212962: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:30:46.213142: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 00:30:46.213162: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 00:30:46.213180: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 00:30:46.213184: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 00:30:46.213240: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:30:46.213403: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:30:46.213541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 257s - loss: 0.3283 - accuracy: 0.8554 - val_loss: 0.0697 - val_accuracy: 0.9358
+
+Epoch 00001: val_loss improved from inf to 0.06966, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/2.weights
+Epoch 2/5
+ - 243s - loss: 0.1715 - accuracy: 0.9363 - val_loss: 0.1839 - val_accuracy: 0.9409
+
+Epoch 00002: val_loss did not improve from 0.06966
+Epoch 00002: early stopping
+2021-07-08 00:39:38.127845: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:39:38.128038: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 00:39:38.128078: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 00:39:38.128091: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 00:39:38.128102: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 00:39:38.128112: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 00:39:38.128123: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 00:39:38.128134: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 00:39:38.128145: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 00:39:38.128194: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:39:38.128362: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:39:38.128496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 00:39:38.128525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 00:39:38.128532: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 00:39:38.128536: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 00:39:38.128595: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:39:38.128772: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 00:39:38.128915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 271s - loss: 0.3376 - accuracy: 0.8544 - val_loss: 0.6886 - val_accuracy: 0.9358
+
+Epoch 00001: val_loss improved from inf to 0.68856, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3.weights
+Epoch 2/5
+ - 257s - loss: 0.1833 - accuracy: 0.9319 - val_loss: 0.1862 - val_accuracy: 0.9484
+
+Epoch 00002: val_loss improved from 0.68856 to 0.18621, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3.weights
+Epoch 3/5
+ - 257s - loss: 0.1215 - accuracy: 0.9555 - val_loss: 0.0103 - val_accuracy: 0.9526
+
+Epoch 00003: val_loss improved from 0.18621 to 0.01034, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3.weights
+Epoch 4/5
+ - 256s - loss: 0.0793 - accuracy: 0.9734 - val_loss: 0.0035 - val_accuracy: 0.9484
+
+Epoch 00004: val_loss improved from 0.01034 to 0.00351, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3.weights
+Epoch 5/5
+ - 257s - loss: 0.0572 - accuracy: 0.9822 - val_loss: 0.0018 - val_accuracy: 0.9502
+
+Epoch 00005: val_loss improved from 0.00351 to 0.00176, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3.weights
+2021-07-08 01:02:01.163009: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:02:01.163201: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 01:02:01.163240: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 01:02:01.163252: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 01:02:01.163263: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 01:02:01.163273: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 01:02:01.163283: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 01:02:01.163293: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 01:02:01.163304: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 01:02:01.163362: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:02:01.163525: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:02:01.163656: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 01:02:01.163676: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 01:02:01.163682: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 01:02:01.163686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 01:02:01.163742: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:02:01.163905: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:02:01.164117: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 269s - loss: 0.3447 - accuracy: 0.8475 - val_loss: 0.0283 - val_accuracy: 0.9270
+
+Epoch 00001: val_loss improved from inf to 0.02832, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/4.weights
+Epoch 2/5
+ - 260s - loss: 0.1910 - accuracy: 0.9273 - val_loss: 0.2288 - val_accuracy: 0.9293
+
+Epoch 00002: val_loss did not improve from 0.02832
+Epoch 00002: early stopping
+2021-07-08 01:11:22.457606: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:11:22.457798: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 01:11:22.457836: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 01:11:22.457848: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 01:11:22.457859: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 01:11:22.457869: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 01:11:22.457879: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 01:11:22.457890: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 01:11:22.457901: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 01:11:22.457948: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:11:22.458113: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:11:22.458245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 01:11:22.458275: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 01:11:22.458281: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 01:11:22.458286: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 01:11:22.458343: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:11:22.458508: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:11:22.458648: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 271s - loss: 0.3124 - accuracy: 0.8662 - val_loss: 0.0146 - val_accuracy: 0.9376
+
+Epoch 00001: val_loss improved from inf to 0.01462, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/5.weights
+Epoch 2/5
+ - 261s - loss: 0.1698 - accuracy: 0.9357 - val_loss: 0.0187 - val_accuracy: 0.9428
+
+Epoch 00002: val_loss did not improve from 0.01462
+Epoch 00002: early stopping
+2021-07-08 01:20:48.425341: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:20:48.425549: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 01:20:48.425588: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 01:20:48.425600: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 01:20:48.425611: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 01:20:48.425621: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 01:20:48.425631: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 01:20:48.425641: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 01:20:48.425652: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 01:20:48.425700: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:20:48.425882: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:20:48.426032: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 01:20:48.426053: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 01:20:48.426058: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 01:20:48.426063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 01:20:48.426121: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:20:48.426316: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:20:48.426452: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 787s - loss: 0.4019 - accuracy: 0.8106 - val_loss: 0.2243 - val_accuracy: 0.8833
+
+Epoch 00001: val_loss improved from inf to 0.22425, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1_ext.weights
+Epoch 2/5
+ - 760s - loss: 0.2667 - accuracy: 0.8883 - val_loss: 0.1712 - val_accuracy: 0.8976
+
+Epoch 00002: val_loss improved from 0.22425 to 0.17116, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/1_ext.weights
+Epoch 3/5
+ - 760s - loss: 0.2054 - accuracy: 0.9176 - val_loss: 1.1296 - val_accuracy: 0.8992
+
+Epoch 00003: val_loss did not improve from 0.17116
+Epoch 00003: early stopping
+2021-07-08 01:59:53.620303: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:59:53.620525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 01:59:53.620564: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 01:59:53.620575: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 01:59:53.620586: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 01:59:53.620596: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 01:59:53.620606: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 01:59:53.620616: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 01:59:53.620627: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 01:59:53.620674: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:59:53.620873: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:59:53.621003: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 01:59:53.621023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 01:59:53.621029: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 01:59:53.621034: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 01:59:53.621089: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:59:53.621251: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 01:59:53.621398: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 773s - loss: 0.3956 - accuracy: 0.8158 - val_loss: 0.5590 - val_accuracy: 0.8891
+
+Epoch 00001: val_loss improved from inf to 0.55902, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/2_ext.weights
+Epoch 2/5
+ - 764s - loss: 0.2728 - accuracy: 0.8839 - val_loss: 0.1584 - val_accuracy: 0.8995
+
+Epoch 00002: val_loss improved from 0.55902 to 0.15835, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/2_ext.weights
+Epoch 3/5
+ - 760s - loss: 0.2070 - accuracy: 0.9134 - val_loss: 0.1105 - val_accuracy: 0.9050
+
+Epoch 00003: val_loss improved from 0.15835 to 0.11048, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/2_ext.weights
+Epoch 4/5
+ - 760s - loss: 0.1557 - accuracy: 0.9359 - val_loss: 0.8832 - val_accuracy: 0.9093
+
+Epoch 00004: val_loss did not improve from 0.11048
+Epoch 00004: early stopping
+2021-07-08 02:51:32.237410: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 02:51:32.237599: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 02:51:32.237643: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 02:51:32.237657: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 02:51:32.237670: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 02:51:32.237682: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 02:51:32.237694: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 02:51:32.237705: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 02:51:32.237717: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 02:51:32.237766: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 02:51:32.237930: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 02:51:32.238062: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 02:51:32.238085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 02:51:32.238091: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 02:51:32.238096: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 02:51:32.238152: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 02:51:32.238316: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 02:51:32.238463: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 773s - loss: 0.3918 - accuracy: 0.8171 - val_loss: 0.1436 - val_accuracy: 0.8850
+
+Epoch 00001: val_loss improved from inf to 0.14364, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3_ext.weights
+Epoch 2/5
+ - 773s - loss: 0.2664 - accuracy: 0.8846 - val_loss: 0.0244 - val_accuracy: 0.9013
+
+Epoch 00002: val_loss improved from 0.14364 to 0.02442, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/3_ext.weights
+Epoch 3/5
+ - 763s - loss: 0.2025 - accuracy: 0.9161 - val_loss: 0.0885 - val_accuracy: 0.9046
+
+Epoch 00003: val_loss did not improve from 0.02442
+Epoch 00003: early stopping
+2021-07-08 03:30:38.096307: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 03:30:38.096493: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 03:30:38.096537: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 03:30:38.096550: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 03:30:38.096563: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 03:30:38.096574: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 03:30:38.096586: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 03:30:38.096598: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 03:30:38.096610: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 03:30:38.096655: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 03:30:38.096856: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 03:30:38.096987: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 03:30:38.097007: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 03:30:38.097013: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 03:30:38.097018: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 03:30:38.097073: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 03:30:38.097236: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 03:30:38.097374: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 794s - loss: 0.3928 - accuracy: 0.8175 - val_loss: 0.8174 - val_accuracy: 0.8859
+
+Epoch 00001: val_loss improved from inf to 0.81742, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/4_ext.weights
+Epoch 2/5
+ - 788s - loss: 0.2664 - accuracy: 0.8869 - val_loss: 0.2929 - val_accuracy: 0.9010
+
+Epoch 00002: val_loss improved from 0.81742 to 0.29287, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/4_ext.weights
+Epoch 3/5
+ - 785s - loss: 0.2032 - accuracy: 0.9168 - val_loss: 0.4606 - val_accuracy: 0.9075
+
+Epoch 00003: val_loss did not improve from 0.29287
+Epoch 00003: early stopping
+2021-07-08 04:10:42.668164: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:10:42.668351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 04:10:42.668390: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 04:10:42.668402: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 04:10:42.668413: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 04:10:42.668424: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 04:10:42.668434: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 04:10:42.668444: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 04:10:42.668456: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 04:10:42.668503: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:10:42.668667: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:10:42.668833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 04:10:42.668856: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 04:10:42.668862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 04:10:42.668866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 04:10:42.668925: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:10:42.669090: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:10:42.669229: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 798s - loss: 0.3999 - accuracy: 0.8137 - val_loss: 0.1771 - val_accuracy: 0.8873
+
+Epoch 00001: val_loss improved from inf to 0.17711, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/5_ext.weights
+Epoch 2/5
+ - 793s - loss: 0.2742 - accuracy: 0.8819 - val_loss: 0.0468 - val_accuracy: 0.9050
+
+Epoch 00002: val_loss improved from 0.17711 to 0.04679, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/ernie_weights/5_ext.weights
+Epoch 3/5
+ - 780s - loss: 0.2144 - accuracy: 0.9117 - val_loss: 0.2921 - val_accuracy: 0.9070
+
+Epoch 00003: val_loss did not improve from 0.04679
+Epoch 00003: early stopping
+2021-07-08 04:50:52.337365: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:50:52.337559: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 04:50:52.337597: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 04:50:52.337609: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 04:50:52.337619: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 04:50:52.337629: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 04:50:52.337639: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 04:50:52.337649: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 04:50:52.337660: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 04:50:52.337706: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:50:52.337867: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:50:52.337997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 04:50:52.338017: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 04:50:52.338023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 04:50:52.338028: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 04:50:52.338082: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:50:52.338243: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 04:50:52.338380: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 386s - loss: 0.6948 - accuracy: 0.5608 - val_loss: 0.7136 - val_accuracy: 0.5995
+
+Epoch 00001: val_loss improved from inf to 0.71362, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/1.weights
+Epoch 2/5
+ - 372s - loss: 0.6650 - accuracy: 0.6040 - val_loss: 0.4014 - val_accuracy: 0.8707
+
+Epoch 00002: val_loss improved from 0.71362 to 0.40139, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/1.weights
+Epoch 3/5
+ - 372s - loss: 0.5101 - accuracy: 0.7515 - val_loss: 0.2329 - val_accuracy: 0.9051
+
+Epoch 00003: val_loss improved from 0.40139 to 0.23288, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/1.weights
+Epoch 4/5
+ - 372s - loss: 0.4255 - accuracy: 0.8043 - val_loss: 0.2244 - val_accuracy: 0.9116
+
+Epoch 00004: val_loss improved from 0.23288 to 0.22435, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/1.weights
+Epoch 5/5
+ - 372s - loss: 0.3858 - accuracy: 0.8318 - val_loss: 0.1219 - val_accuracy: 0.9153
+
+Epoch 00005: val_loss improved from 0.22435 to 0.12190, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/1.weights
+2021-07-08 05:23:00.857248: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:23:00.857445: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 05:23:00.857487: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 05:23:00.857499: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 05:23:00.857510: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 05:23:00.857520: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 05:23:00.857531: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 05:23:00.857541: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 05:23:00.857552: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 05:23:00.857601: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:23:00.857765: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:23:00.857895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 05:23:00.857917: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 05:23:00.857922: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 05:23:00.857927: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 05:23:00.857982: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:23:00.858146: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:23:00.858285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 385s - loss: 0.7013 - accuracy: 0.5533 - val_loss: 0.7610 - val_accuracy: 0.6000
+
+Epoch 00001: val_loss improved from inf to 0.76096, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/2.weights
+Epoch 2/5
+ - 371s - loss: 0.6387 - accuracy: 0.6279 - val_loss: 0.3342 - val_accuracy: 0.8753
+
+Epoch 00002: val_loss improved from 0.76096 to 0.33418, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/2.weights
+Epoch 3/5
+ - 372s - loss: 0.4778 - accuracy: 0.7728 - val_loss: 0.8806 - val_accuracy: 0.8935
+
+Epoch 00003: val_loss did not improve from 0.33418
+Epoch 00003: early stopping
+2021-07-08 05:42:25.436478: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:42:25.436667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 05:42:25.436704: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 05:42:25.436717: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 05:42:25.436727: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 05:42:25.436738: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 05:42:25.436771: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 05:42:25.436783: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 05:42:25.436794: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 05:42:25.436852: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:42:25.437016: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:42:25.437147: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 05:42:25.437167: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 05:42:25.437173: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 05:42:25.437178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 05:42:25.437234: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:42:25.437397: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:42:25.437534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 384s - loss: 0.7021 - accuracy: 0.5594 - val_loss: 0.4797 - val_accuracy: 0.6000
+
+Epoch 00001: val_loss improved from inf to 0.47965, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/3.weights
+Epoch 2/5
+ - 370s - loss: 0.6803 - accuracy: 0.5934 - val_loss: 0.5959 - val_accuracy: 0.7679
+
+Epoch 00002: val_loss did not improve from 0.47965
+Epoch 00002: early stopping
+2021-07-08 05:55:34.772589: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:55:34.772817: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 05:55:34.772860: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 05:55:34.772872: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 05:55:34.772883: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 05:55:34.772894: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 05:55:34.772904: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 05:55:34.772915: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 05:55:34.772926: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 05:55:34.772975: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:55:34.773157: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:55:34.773348: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 05:55:34.773382: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 05:55:34.773402: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 05:55:34.773407: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 05:55:34.773493: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:55:34.773692: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 05:55:34.773834: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 384s - loss: 0.7036 - accuracy: 0.5569 - val_loss: 0.6949 - val_accuracy: 0.6000
+
+Epoch 00001: val_loss improved from inf to 0.69490, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/4.weights
+Epoch 2/5
+ - 370s - loss: 0.6709 - accuracy: 0.6023 - val_loss: 0.5296 - val_accuracy: 0.8251
+
+Epoch 00002: val_loss improved from 0.69490 to 0.52964, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/4.weights
+Epoch 3/5
+ - 370s - loss: 0.4959 - accuracy: 0.7639 - val_loss: 0.2282 - val_accuracy: 0.8847
+
+Epoch 00003: val_loss improved from 0.52964 to 0.22817, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/4.weights
+Epoch 4/5
+ - 370s - loss: 0.4129 - accuracy: 0.8173 - val_loss: 0.0918 - val_accuracy: 0.8944
+
+Epoch 00004: val_loss improved from 0.22817 to 0.09184, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/4.weights
+Epoch 5/5
+ - 370s - loss: 0.3971 - accuracy: 0.8239 - val_loss: 0.1515 - val_accuracy: 0.9014
+
+Epoch 00005: val_loss did not improve from 0.09184
+Epoch 00005: early stopping
+2021-07-08 06:27:20.495995: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 06:27:20.496191: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+2021-07-08 06:27:20.496231: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2021-07-08 06:27:20.496243: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2021-07-08 06:27:20.496253: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2021-07-08 06:27:20.496264: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2021-07-08 06:27:20.496274: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2021-07-08 06:27:20.496285: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2021-07-08 06:27:20.496296: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2021-07-08 06:27:20.496344: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 06:27:20.496507: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 06:27:20.496638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2021-07-08 06:27:20.496660: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-07-08 06:27:20.496665: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-07-08 06:27:20.496670: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-07-08 06:27:20.496726: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 06:27:20.496974: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-07-08 06:27:20.497145: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7452 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 1/5
+ - 383s - loss: 0.6982 - accuracy: 0.5733 - val_loss: 0.6693 - val_accuracy: 0.5998
+
+Epoch 00001: val_loss improved from inf to 0.66934, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/5.weights
+Epoch 2/5
+ - 369s - loss: 0.6601 - accuracy: 0.6055 - val_loss: 0.4329 - val_accuracy: 0.8664
+
+Epoch 00002: val_loss improved from 0.66934 to 0.43292, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/5.weights
+Epoch 3/5
+ - 370s - loss: 0.4942 - accuracy: 0.7647 - val_loss: 0.1797 - val_accuracy: 0.8911
+
+Epoch 00003: val_loss improved from 0.43292 to 0.17971, saving model to /media/ailab/Disk/dzysunshine/天池新冠语义匹配比赛2020/epidemic-sentence-pair-master/user_data/model_data/roberta_weights/5.weights
+Epoch 4/5
+ - 370s - loss: 0.4269 - accuracy: 0.8115 - val_loss: 0.7029 - val_accuracy: 0.8944
+
+Epoch 00004: val_loss did not improve from 0.17971
+Epoch 00004: early stopping
